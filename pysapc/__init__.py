@@ -1,3 +1,3 @@
-from SparseAPCluster import SAP
-from SparseAPCluster import sparseAffinityPropagation
-import sparseAP_cy
+from .SparseAPCluster import SAP
+from .SparseAPCluster import sparseAffinityPropagation
+from . import sparseAP_cy

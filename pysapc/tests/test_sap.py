@@ -24,7 +24,7 @@ def loadMatrix(data_file, dataCutoff=None):
     if dataCutoff is not None, all value (affinity/similarity) below this will be discarded
     """
     #print('{0}, loading data'.format(datetime.now()))
-    simi=pd.DataFrame.from_csv(data_file,sep='\t',index_col=None)
+    simi=pd.read_csv(data_file,sep='\t',index_col=None)
     samples=sorted(list(set(simi.row) | set(simi.col)))
     samplesInd={el:ind for ind,el in enumerate(samples)}
     row,col,data=simi.row.map(lambda x:samplesInd[x]),simi.col.map(lambda x:samplesInd[x]),simi.data

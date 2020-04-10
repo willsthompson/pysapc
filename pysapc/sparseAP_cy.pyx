@@ -1,3 +1,7 @@
+#!python
+#cython: language_level=3
+
+
 """
 cython helper for Sparse Affinity Propagation Clustering (SAP)
 Use C code to speed up computation for SAP

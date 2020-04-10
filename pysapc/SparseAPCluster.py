@@ -9,8 +9,8 @@ Speed optimized with cython
 import numpy as np
 from datetime import datetime
 from scipy.sparse import coo_matrix,csr_matrix,lil_matrix
-import sparseAP_cy # cython for calculation speed optimization
-import sparseMatrixPrepare
+from . import sparseAP_cy # cython for calculation speed optimization
+from . import sparseMatrixPrepare
 
 #########################################################################
 
@@ -88,10 +88,10 @@ def getPreferenceList(preference,nSamplesOri,data_array):
     Return preference list(same length as samples)
     """
     # numeric value
-    if isinstance(preference, float) or isinstance(preference, int) or isinstance(preference, long):
+    if isinstance(preference, float) or isinstance(preference, int):
         preference_list=[float(preference)]*nSamplesOri
     # str/unicode min/mean
-    elif isinstance(preference, basestring):
+    elif isinstance(preference, str):
         if str(preference)=='min':
             preference=data_array.min()
         elif str(preference)=='median':
